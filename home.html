@@ -5,7 +5,7 @@
 	<title>Главная</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="css/style.min.css?_v=20220413220037">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220415220019">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +21,7 @@
 				</div>
 				<div class="header-body">
 					<a href="#" class="header-logo">
-						<img src="img/logo.svg?_v=1649876437197" alt="">
+						<img src="img/logo.svg?_v=1650049219676" alt="">
 					</a>
 					<div data-da=".header-bottom,1350,2" class="header-menu menu">
 						<nav class="menu-body">
@@ -40,20 +40,22 @@
 									<div class="spollers-item categories-spoller">
 										<button type="button" data-spoller class="spollers-title categories-title _icon-catalog">Категории</button>
 
-										<div class="spollers-body  categories-body ">
-											<ul class="submenu-list categories-list">
-												<li><a href="" class="submenu-link categories-link">Лиственные деревья</a></li>
-												<li><a href="" class="submenu-link categories-link">Кустарники</a></li>
-												<li><a href="" class="submenu-link categories-link">Хвойные растения</a></li>
-												<li><a href="" class="submenu-link categories-link">Плодово-ягодные</a></li>
-												<li><a href="" class="submenu-link categories-link">Бонсаи и топиары</a></li>
-												<li><a href="" class="submenu-link categories-link">Solitaire</a></li>
-												<li><a href="" class="submenu-link categories-link">Крупномеры</a></li>
-												<li><a href="" class="submenu-link categories-link">Можжевильники</a></li>
-												<li><a href="" class="submenu-link categories-link">Хиты продаж</a></li>
-												<li><a href="" class="submenu-link categories-link">Новинки</a></li>
-												<li><a href="" class="submenu-link categories-link">Сопутсвующие товары</a></li>
-											</ul>
+										<div class="spollers-body categories-bg">
+											<div class=" categories-body ">
+												<ul class="submenu-list categories-list">
+													<li><a href="" class="submenu-link categories-link">Лиственные деревья</a></li>
+													<li><a href="" class="submenu-link categories-link">Кустарники</a></li>
+													<li><a href="" class="submenu-link categories-link">Хвойные растения</a></li>
+													<li><a href="" class="submenu-link categories-link">Плодово-ягодные</a></li>
+													<li><a href="" class="submenu-link categories-link">Бонсаи и топиары</a></li>
+													<li><a href="" class="submenu-link categories-link">Solitaire</a></li>
+													<li><a href="" class="submenu-link categories-link">Крупномеры</a></li>
+													<li><a href="" class="submenu-link categories-link">Можжевильники</a></li>
+													<li><a href="" class="submenu-link categories-link">Хиты продаж</a></li>
+													<li><a href="" class="submenu-link categories-link">Новинки</a></li>
+													<li><a href="" class="submenu-link categories-link">Сопутсвующие товары</a></li>
+												</ul>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -119,7 +121,7 @@
 				</div>
 			</div>
 			<div class="page-content content">
-				<form >
+				<form action="sendmail.php" method="POST" data-ajax>
 					<div class="content-container">
 						<div class="content-name">Морару Валентин</div>
 						<div class="content-body">
@@ -144,22 +146,22 @@
 											<div class="personal-items">
 												<div class="personal-item">
 													<label class="profile-label" for="name">Имя:</label>
-													<input autocomplete="off" id="name" data-required type="text" name="name" placeholder="Вадим" class=" input profile-input">
+													<input autocomplete="off" id="name" data-required type="text" name="name" placeholder="Вадим" class=" input profile-input _req">
 												</div>
 												<div class="personal-item">
-													<label class="profile-label"  for="surname">Фамилия:</label>
-													<input autocomplete="off" type="text" name="surname" id="surname"  class=" input profile-input">
+													<label class="profile-label" for="surname">Фамилия:</label>
+													<input autocomplete="off" type="text" name="surname" id="surname" data-error="Ошибка" placeholder="Громов" class=" input profile-input">
 												</div>
 												<div class="personal-item">
 													<label class="profile-label" for="sex">Ваш пол:</label>
 													<select name="sex" id="sex" class="form">
-														<option value="male" selected>Мужской</option>
-														<option value="female">Женский</option>
+														<option value="Мужской" selected>Мужской</option>
+														<option value="Женский">Женский</option>
 													</select>
 												</div>
 												<div class="personal-item">
 													<label class="profile-label" for="data">Дата рождения:</label>
-													<input autocomplete="off" type="date" name="data" class=" input-calendar input profile-input ">
+													<input autocomplete="off" id="data" type="text" size="10" onClick="xCal(this)" onmouseenter="xCal(this)" onKeyUp="xCal()" name="data" class=" input-calendar input profile-input ">
 												</div>
 											</div>
 
@@ -169,7 +171,7 @@
 											<div class="contact-items">
 												<div class="contact-item">
 													<label class="profile-label" for="phone">Телефон:</label>
-													<input id="phone" autocomplete="off" type="tel" name="phone" data-error="Ошибка" class="contact-input input profile-input">
+													<input id="phone" autocomplete="off" type="tel" data-required name="phone" data-error="Ошибка" class="contact-input input profile-input">
 													<a href="#" class="contact-confirm"> Подтвердить</a>
 												</div>
 												<div class="contact-item">
@@ -184,7 +186,7 @@
 									</div>
 									<div class="info-avatar avatar">
 										<div class="avatar-image">
-											<picture><source srcset="img/avatar.webp" type="image/webp"><img src="img/avatar.jpg?_v=1649876437197" alt=""></picture>
+											<picture><source srcset="img/avatar.webp" type="image/webp"><img src="img/avatar.jpg?_v=1650049219676" alt=""></picture>
 										</div>
 										<div class="avatar-name">Морару Валентин</div>
 										<div class="avatar-change">Изменить аватар</div>
@@ -223,7 +225,7 @@
 				<div class="footer-body">
 					<div class="footer-column column-logo">
 						<a href="" class="footer-logo">
-							<img src="img/logoW.svg?_v=1649876437197" alt="">
+							<img src="img/logoW.svg?_v=1650049219676" alt="">
 						</a>
 						<div class="footer-social social-items">
 							<a href="" class="social-item _icon-facebook"></a>
@@ -270,10 +272,10 @@
 				<div class="footer-right">
 					<div class="footer-text">© 20__ ООО «». Все права защищены.</div>
 					<div class="footer-pay">
-						<div class="pay-item"><picture><source srcset="img/footer/01.webp" type="image/webp"><img src="img/footer/01.jpg?_v=1649876437197" alt=""></picture></div>
-						<div class="pay-item"><picture><source srcset="img/footer/02.webp" type="image/webp"><img src="img/footer/02.jpg?_v=1649876437197" alt=""></picture></div>
-						<div class="pay-item"><picture><source srcset="img/footer/03.webp" type="image/webp"><img src="img/footer/03.jpg?_v=1649876437197" alt=""></picture></div>
-						<div class="pay-item"><picture><source srcset="img/footer/04.webp" type="image/webp"><img src="img/footer/04.jpg?_v=1649876437197" alt=""></picture></div>
+						<div class="pay-item"><picture><source srcset="img/footer/01.webp" type="image/webp"><img src="img/footer/01.jpg?_v=1650049219676" alt=""></picture></div>
+						<div class="pay-item"><picture><source srcset="img/footer/02.webp" type="image/webp"><img src="img/footer/02.jpg?_v=1650049219676" alt=""></picture></div>
+						<div class="pay-item"><picture><source srcset="img/footer/03.webp" type="image/webp"><img src="img/footer/03.jpg?_v=1650049219676" alt=""></picture></div>
+						<div class="pay-item"><picture><source srcset="img/footer/04.webp" type="image/webp"><img src="img/footer/04.jpg?_v=1650049219676" alt=""></picture></div>
 					</div>
 				</div>
 			</div>
@@ -291,7 +293,7 @@
 </div>
  -->
 
-	<script src="js/app.min.js?_v=20220413220037"></script>
+	<script src="js/app.min.js?_v=20220415220019"></script>
 </body>
 
 </html>
